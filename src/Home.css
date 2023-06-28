@@ -1,0 +1,78 @@
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+}
+
+.players {
+  background-color: blueviolet !important;
+  border: 10px solid white !important;
+  border-color: aliceblue !important;
+  color: white !important;
+  font-weight: 90 !important;
+  text-transform: inherit !important;
+  border-radius: 90px !important;
+  width: 60px !important;
+  height: 60px !important;
+  font-size: 62px !important;
+  padding: 60px 60px !important;
+}
+
+.rules {
+  background-color: aliceblue !important;
+  color: blueviolet !important;
+  font-weight: 90 !important;
+  text-transform: inherit !important;
+  border-radius: 10px !important;
+  font-size: 20px !important;
+  padding: 10px 20px !important;
+  width: auto !important;
+  height: auto !important;
+  margin-left: 10px !important;
+}
+
+.container {
+  border: 10px solid white;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: flex-start;
+  position: relative;
+  padding: 20px;
+  margin: auto 40px 0;
+  align-items: center;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.images img {
+  margin: 20px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 60px; 
+  margin-top: 90px;
+}
+
+.button-container .players {
+  margin-bottom: 20px;
+}
+  
+.top-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 0 20px;
+  }
+}
+  

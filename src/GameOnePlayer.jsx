@@ -2,12 +2,24 @@ import './Game.css';
 import { useState, useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import GameOptions from './GameOptions';
+import Result from './Result';
+import { useNavigate } from "react-router-dom";
 
 function GameOnePlayer() {
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
   const [disabled, setDisabled] = useState(false);
+  const [result, setResult] = useState("")
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
+  const navigate = useNavigate();
+
+  const handlePopupClose = () => {
+      setResult("");
+      setComputerChoice(null);
+      setUserChoice(null); 
+      navigate(`${process.env.PUBLIC_URL}/`)
+  };
 
   const handleUserChoice = (idOption) => {
     setDisabled(true)
@@ -19,13 +31,22 @@ function GameOnePlayer() {
     }, 1500);
 
     setTimeout(() => {
-      // setResult(getResult(choice, randomChoice));
+      setResult(getResult(idOption, randomChoice));
     }, 3000);
 
     clearTimeout();
   }
 
-  console.log(disabled)
+  const getResult = (user, computer) => {
+    if (user === computer) {
+      return "You tied"
+    }
+    if (GameOptions[user-1].wins.includes(computer)){
+      return "You won"
+    }
+     return "You lost"
+    
+  }
 
   const handleKeyPress = (event) => {
     if (!disabled) {
@@ -47,13 +68,10 @@ function GameOnePlayer() {
         default:
           break;
       }
-    } else {
-      
     }
   };
 
   useEffect(() => {
-
     document.addEventListener('keypress', handleKeyPress);
 
     return () => {
@@ -100,6 +118,7 @@ function GameOnePlayer() {
       )
       )}   
       </div>
+      {result != "" && <Result result={result} onClose={handlePopupClose}/>}
   </div>
   );
 }

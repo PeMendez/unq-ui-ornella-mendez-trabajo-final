@@ -43,12 +43,10 @@
   justify-content: center;
   align-items: center;
   margin-top: auto;
+  margin-bottom: 5%;
 }
 
-.icons svg {
-  font-size: 4vw; 
-  margin: 2vw;
-}
+
 
 .button-option {
   border-radius: 50%;
@@ -72,9 +70,15 @@
   flex-direction: column;
 }
 
+.icon-wrapper svg {
+  width: 80%; /* Ajusta el ancho del icono según tus preferencias */
+  height: 80%; /* Ajusta la altura del icono según tus preferencias */
+}
+
+
 .label {
   text-align: center;
-  font-size: x-large;
+  font-size: large;
   font-weight: bold;
   margin-top: -15px;
 }

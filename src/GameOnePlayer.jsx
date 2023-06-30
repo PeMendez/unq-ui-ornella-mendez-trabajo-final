@@ -10,7 +10,8 @@ function GameOnePlayer() {
   const [computerChoice, setComputerChoice] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [result, setResult] = useState("")
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [userWins, setUserWins] = useState(0);
+  const [computerWins, setComputerWins] = useState(0);
 
   const navigate = useNavigate();
 
@@ -42,10 +43,11 @@ function GameOnePlayer() {
       return "You tied"
     }
     if (GameOptions[user-1].wins.includes(computer)){
+      setUserWins(userWins+1)
       return "You won"
     }
-     return "You lost"
-    
+     setComputerWins(computerWins+1)
+     return "You lost"    
   }
 
   const handleKeyPress = (event) => {
@@ -86,10 +88,18 @@ function GameOnePlayer() {
         <span className='title-text'>Round</span>
       </h1>
     </div>
-    <div className='container'>
-      <span> aca poner cuantas victorias tiene cada uno</span>
+    <div className='scoreboard'>
+    <Row>
+        <Col>
+        <span> you win {userWins} games</span>
+        </Col>
+        <Col>
+        <span> computer win {computerWins} game</span>
+        </Col>
+      </Row>
+      
     </div>
-    <div className=''>
+    <div>
       <Row className='choice'>
         <Col className='choiceP1'>
           <button className="round-button">

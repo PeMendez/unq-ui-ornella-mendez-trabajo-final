@@ -15,8 +15,6 @@ const Result = ({result, onClose}) => {
             </div>
         </div>
     );
-
-
 }
 
 export default Result; 

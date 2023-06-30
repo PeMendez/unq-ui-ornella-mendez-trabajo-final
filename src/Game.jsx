@@ -1,5 +1,4 @@
-import GameOptionsP1 from './GameOptionsP1'
-import GameOptionsP2 from './GameOptionsP2';
+import GameOptions from './GameOptions'
 import { useState, useEffect } from 'react';
 import './Game.css';
 
@@ -61,7 +60,7 @@ function Game() {
   return (
     <div className="App">
       <div className="playerOne">
-        {GameOptionsP1.map((opcion) => (
+        {GameOptions.map((opcion) => (
           // <button
           //   key={opcion.id}
           //   onClick={() => handleKeyPress()}
@@ -80,16 +79,6 @@ function Game() {
 
 
       <div className='playerTwo'>
-      {GameOptionsP2.map((opcion) => (
-          <button
-            key={opcion.id}
-            onClick={() => handleKeyPress()}
-            title={opcion.name}
-          >
-            <img src={opcion.img} /> 
-            
-          </button>
-        ))}
       </div>
 
       {playerOneChoice && <p>Opción seleccionada por jugador uno es : {playerOneChoice}</p>}

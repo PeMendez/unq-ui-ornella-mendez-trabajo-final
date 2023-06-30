@@ -51,8 +51,8 @@ const Home = () => {
               </select>
             </div>
             <div className='button-game mb-1'>
-              <Button className='mb-4 outline-custom' variant="outline-primary" onClick={() => handleStartGameOne()}>One player</Button>
-              <Button className='mb-4 outline-custom' variant="outline-primary" onClick={() => handleStartGameTwo()}>Two players</Button>
+              <Button className='mb-4 outline-custom' onClick={() => handleStartGameOne()}>One player</Button>
+              <Button className='mb-4 outline-custom' onClick={() => handleStartGameTwo()}>Two players</Button>
             </div>            
             <div className='button-info mb-5'>
               <Button className='mb-1 info' variant="outline-info" onClick={() => handlePopUpOpen(true)}>Rules</Button>

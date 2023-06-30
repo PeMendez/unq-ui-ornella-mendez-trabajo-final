@@ -1,18 +1,16 @@
 import React from 'react';
-import rockA from './images/rockA.png'
-import paperA from './images/paperA.png';
-import scissorsA from './images/scissorsA.png';
-import lizardA from './images/lizardA.png';
-import spockA from './images/spockA.png';
 import { useState } from 'react';
-import './Home.css';
-import Button from '@mui/material/Button';
+import Button from 'react-bootstrap/Button'
 import PopUpRules from './PopUpRules'
 import { useNavigate } from "react-router-dom";
+import spock from './images/spock.png';
+import './Home.css';
+import { LiaHandLizard ,LiaHandSpock, LiaHandScissors, LiaHandRock, LiaHandPaper } from "react-icons/lia";
 
 const Home = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [isRules, setIsRules] = useState(false);
+    const [value, setValue] = useState("")
     
     const navigate = useNavigate();
 
@@ -25,40 +23,54 @@ const Home = () => {
         setIsPopupOpen(true)
     }
 
-    const handleStartGame = (isOnePlayer) => {
-        navigate(`/game/${isOnePlayer}`)
+    const handleStartGameOne = () => {
+        navigate(`${process.env.PUBLIC_URL}/gameOne`)
+    }
+
+    const handleStartGameTwo = () => {
+        navigate(`/gameTwo`)
     }
 
     return (
-        <div className="App">
-          <div className="container">
-            <div className= "images">
-                <img src={rockA}   />
-                <img src={paperA}   />
-                <img src={scissorsA}   />
-                <img src={lizardA}   />
-                <img src={spockA}   />
+        <div className='home-container container'>
+          <div className='container'>
+            <h1 className='tittle-main'>
+              <span className="title-text">Rock, Paper, Scissors, Lizard or Spock  </span>
+              <img src={spock} alt="spock" className="img-fluid" />
+            </h1>
+          </div>
+          <div className='home-div'>
+            <div className='round-container mb-4'>
+              <span className='label-round'>
+                Rounds
+              </span>
+              <select className='value-rounds' name="round" >
+                <option value="1">1</option>
+                <option value="3">3</option>
+                <option value="5">5</option>
+              </select>
             </div>
-            <div className="top-right">
-                <Button className="rules" onClick={() => handlePopUpOpen(true)}>
-                    Rules
-                </Button>
-                <Button className="rules" onClick={() => handlePopUpOpen(false)}>
-                    How to play?
-                </Button>
+            <div className='button-game mb-1'>
+              <Button className='mb-4 outline-custom' variant="outline-primary" onClick={() => handleStartGameOne()}>One player</Button>
+              <Button className='mb-4 outline-custom' variant="outline-primary" onClick={() => handleStartGameTwo()}>Two players</Button>
             </div>            
-                <div className="button-container">
-                <Button className="players"  onClick={() => handleStartGame(true)}>
-                    1P
-                </Button>
-                <Button className="players"  onClick={() => handleStartGame(false)}>
-                    2P
-                </Button>
-                </div>
-            </div>
+            <div className='button-info mb-5'>
+              <Button className='mb-1 info' variant="outline-info" onClick={() => handlePopUpOpen(true)}>Rules</Button>
+              <Button className='mb-1 info' variant="outline-info" onClick={() => handlePopUpOpen(false)}>How to play?</Button>
+            </div> 
             {isPopupOpen && <PopUpRules onClose={handlePopupClose} isRules={isRules} />}
+          </div>
+          <div className='icons'>
+              <LiaHandRock/>
+              <LiaHandPaper/>
+              <LiaHandScissors/>
+              <LiaHandLizard/>
+              <LiaHandSpock/>
+            </div>
         </div>
-    )
+      );
+      
+      
 }
 
 export default Home; 

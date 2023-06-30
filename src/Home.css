@@ -3,76 +3,119 @@
   min-height: 100vh;
 }
 
-.players {
-  background-color: blueviolet !important;
-  border: 10px solid white !important;
-  border-color: aliceblue !important;
-  color: white !important;
-  font-weight: 90 !important;
-  text-transform: inherit !important;
-  border-radius: 90px !important;
-  width: 60px !important;
-  height: 60px !important;
-  font-size: 62px !important;
-  padding: 60px 60px !important;
-}
-
-.rules {
-  background-color: aliceblue !important;
-  color: blueviolet !important;
-  font-weight: 90 !important;
-  text-transform: inherit !important;
-  border-radius: 10px !important;
-  font-size: 20px !important;
-  padding: 10px 20px !important;
-  width: auto !important;
-  height: auto !important;
-  margin-left: 10px !important;
-}
-
-.container {
-  border: 10px solid white;
-  display: flex;
-  flex-direction: column;
-  height: 80vh;
-  justify-content: flex-start;
-  position: relative;
-  padding: 20px;
-  margin: auto 40px 0;
-  align-items: center;
-}
-
-.images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 0;
-}
-
-.images img {
-  margin: 20px;
-}
-
-.button-container {
-  display: flex;
-  flex-direction: row;
-  gap: 60px; 
-  margin-top: 90px;
-}
-
-.button-container .players {
-  margin-bottom: 20px;
-}
-  
-.top-right {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+.home-container {
+  margin-top: 60px !important;
+  border: solid #110f1e;
+  border-radius: 5px;
+  max-width: 60% !important;
+  background-color: #222129 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 60vh !important;
 }
 
 @media (max-width: 768px) {
-  .container {
-    margin: 0 20px;
+  .home-container{
+    max-width: 90% !important;
   }
 }
-  
+
+.tittle-main {
+  margin-bottom:  70px !important;
+  font-weight: 900 !important;
+  border-bottom: solid #110f1e;
+  text-align: center !important;
+}
+
+.image-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.img-fluid {
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.home-div {
+  align-items: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: center !important;
+  position: relative !important;
+}
+
+.round-container {
+  margin-bottom: 20px;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+
+.label-round {
+  display: inline-block;
+  margin-right:15px;
+  background-color: black;
+  border-radius: 5px;
+  padding: 4px;
+  color: hsl(263, 100%, 71%);
+  font-size: larger;
+}
+
+.value-rounds{
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px;
+  color: hsl(263, 100%, 71%);
+  font-size: larger;
+}
+
+
+.button-info {
+  display: flex !important;
+  justify-content: end !important;
+  position: absolute;
+  right: 10px;
+  bottom: 70%;
+}
+
+.info {
+  font-size: larger;
+}
+
+.button-game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.button-game .mb-4 {
+  margin: 0 10px;
+}
+
+.outline-custom {
+  color: hsl(263, 100%, 71%);
+  border-color: hsl(263, 100%, 71%);
+  font-size: larger;
+}
+
+.outline-custom:hover {
+  background-color: hsl(263, 100%, 71%);
+  color: #000000;
+  border-color: hsl(263, 100%, 71%);
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+.icons svg {
+  font-size: 60px;
+  margin: 20px;
+}

@@ -9,10 +9,13 @@ import scissorsB from './images/scissorsB.png';
 import lizardB from './images/lizardB.png';
 import spockB from './images/spockB.png';
 import './Game.css';
+import { useState } from 'react';
 
-function Game() {
+function GameOnePlayer() {
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
+
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -42,4 +45,4 @@ function Game() {
   );
 }
 
-export default Game;
+export default GameOnePlayer;

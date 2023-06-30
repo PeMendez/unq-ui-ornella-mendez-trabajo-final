@@ -30,24 +30,26 @@ export default function PopUpRules ({onClose, isRules}) {
             <br />
             Spock vaporizes rock,
             <br />
-            and as it always has, rock crushes scissors.
+            and as it always has, 
+            <br />
+            rock crushes scissors.
             </p>
         ) : (
             <p style={{ fontSize: '20px' }}>
                 For one player<br />
-                press A if you want to choose rock<br />
-                press S if you want to choose paper<br />
-                press D if you want to choose scissors<br />
-                press W if you want to choose lizard<br />
-                press E if you want to choose spock<br />
+                press A --{'>'} rock<br />
+                press S --{'>'} paper<br />
+                press D --{'>'} scissors<br />
+                press W --{'>'} lizard<br />
+                press E --{'>'} spock<br />
                 <br />
                 For two players<br />
                 For the player on the left the above rules apply, for the player on the right the following rules apply:<br />
-                press J if you want to choose rock<br />
-                press K if you want to choose paper<br />
-                press L if you want to choose scissors<br />
-                press I if you want to choose lizard<br />
-                press O if you want to choose spock<br />
+                press J --{'>'} rock<br />
+                press K --{'>'} paper<br />
+                press L --{'>'} scissors<br />
+                press I --{'>'} lizard<br />
+                press O --{'>'} spock<br />
             </p>
         )}     
       </div>

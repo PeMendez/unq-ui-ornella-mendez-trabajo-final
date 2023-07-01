@@ -10,7 +10,7 @@ import { LiaHandLizard ,LiaHandSpock, LiaHandScissors, LiaHandRock, LiaHandPaper
 const Home = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [isRules, setIsRules] = useState(false);
-    const [value, setValue] = useState("")
+    const [value, setValue] = useState(1)
     
     const navigate = useNavigate();
 
@@ -24,12 +24,19 @@ const Home = () => {
     }
 
     const handleStartGameOne = () => {
-        navigate(`${process.env.PUBLIC_URL}/gameOne`)
+        navigate(`${process.env.PUBLIC_URL}/gameOne/${value}`)
     }
 
     const handleStartGameTwo = () => {
-        navigate(`/gameTwo`)
+        navigate(`${process.env.PUBLIC_URL}/gameTwo`)
     }
+
+    const saveSelect = (event) => {
+      console.log(event.target.value)
+        setValue(event.target.value)
+    }
+
+  
 
     return (
         <div className='home-container container'>
@@ -44,7 +51,7 @@ const Home = () => {
               <span className='label-round'>
                 Rounds
               </span>
-              <select className='value-rounds' name="round" >
+              <select className='value-rounds' name="round" value={value.round} onChange={saveSelect}>
                 <option value="1">1</option>
                 <option value="3">3</option>
                 <option value="5">5</option>

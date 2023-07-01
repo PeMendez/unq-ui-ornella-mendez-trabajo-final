@@ -5,7 +5,7 @@ import GameOptions from './GameOptions';
 import Result from './Result';
 import { useNavigate } from "react-router-dom";
 
-function GameOnePlayer() {
+const GameOnePlayer = ({rounds}) => {
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
   const [disabled, setDisabled] = useState(false);
@@ -13,6 +13,7 @@ function GameOnePlayer() {
   const [userWins, setUserWins] = useState(0);
   const [computerWins, setComputerWins] = useState(0);
 
+  console.log("rounds:", {rounds})
   const navigate = useNavigate();
 
   const handlePopupClose = () => {
@@ -67,6 +68,7 @@ function GameOnePlayer() {
           break;
         case 'e':
           handleUserChoice(5);
+          break;
         default:
           break;
       }
@@ -79,22 +81,22 @@ function GameOnePlayer() {
     return () => {
       document.removeEventListener('keypress', handleKeyPress);
     };
-  }, []);
+  }, [disabled]);
   
   return (
     <div className='game-container container'>
     <div className='container'>
       <h1 className='rounds-container'>
-        <span className='title-text'>Round</span>
+        <span className='title-text'>Round {rounds}</span>
       </h1>
     </div>
     <div className='scoreboard'>
     <Row>
         <Col>
-        <span> you win {userWins} games</span>
+        <span> you win {userWins} {userWins < 2 ? "game" : "games"}</span>
         </Col>
         <Col>
-        <span> computer win {computerWins} game</span>
+        <span> computer win {computerWins} {computerWins < 2 ? "game" : "games"}</span>
         </Col>
       </Row>
       
@@ -128,7 +130,7 @@ function GameOnePlayer() {
       )
       )}   
       </div>
-      {result != "" && <Result result={result} onClose={handlePopupClose}/>}
+      {result !== "" && <Result result={result} onClose={handlePopupClose}/>}
   </div>
   );
 }

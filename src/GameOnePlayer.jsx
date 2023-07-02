@@ -3,17 +3,18 @@ import { useState, useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import GameOptions from './GameOptions';
 import Result from './Result';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-const GameOnePlayer = ({rounds}) => {
+const GameOnePlayer = () => {
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [result, setResult] = useState("")
   const [userWins, setUserWins] = useState(0);
   const [computerWins, setComputerWins] = useState(0);
+  const {rounds} = useParams();
+  const [cantRounds, setCantRounds] = useState(0);
 
-  console.log("rounds:", {rounds})
   const navigate = useNavigate();
 
   const handlePopupClose = () => {
@@ -23,7 +24,7 @@ const GameOnePlayer = ({rounds}) => {
       navigate(`${process.env.PUBLIC_URL}/`)
   };
 
-  const handleUserChoice = (idOption) => {
+  const handleUserChoice = (idOption) => {// este anda perfecto sin rondas. 
     setDisabled(true)
     setUserChoice(idOption)
     const randomChoice = Math.floor(Math.random() * 5) +1;
@@ -39,8 +40,10 @@ const GameOnePlayer = ({rounds}) => {
     clearTimeout();
   }
 
+  console.log(disabled, rounds, cantRounds, rounds == cantRounds, result)
+
   const getResult = (user, computer) => {
-    if (user === computer) {
+    if (user == computer) {
       return "You tied"
     }
     if (GameOptions[user-1].wins.includes(computer)){
@@ -48,6 +51,57 @@ const GameOnePlayer = ({rounds}) => {
       return "You won"
     }
      setComputerWins(computerWins+1)
+     return "You lost"    
+  }
+
+  //CODIGO PARA USAR RONDAS no termina de andar bien. 
+  const handleUserChoiceR = (idOption) => {
+    setDisabled(true)
+    setCantRounds(cantRounds+1)
+    setUserChoice(idOption)
+    const randomChoice = Math.floor(Math.random() * 5) +1;
+
+    setTimeout(() => {
+      setComputerChoice(randomChoice);
+    }, 1500);
+
+    setTimeout(() => {
+      countWins(idOption, randomChoice);
+      setUserChoice(null)
+      setComputerChoice(null)
+    }, 3000);
+
+    setTimeout(() => {
+      checkResult()
+    }, 3000);
+
+    clearTimeout();
+  }
+
+  const checkResult = () => {
+    if (cantRounds == rounds) {
+      setResult(getResultCount())
+    } else {
+      setDisabled(false)
+    }
+  }
+
+  const countWins = (user, computer) => {
+    if (GameOptions[user-1].wins.includes(computer)){
+      setUserWins(userWins+1)
+    }
+    if (GameOptions[computer-1].wins.includes(user)){
+      setComputerWins(computerWins+1)
+    }
+  }  
+
+  const getResultCount = () => {
+    if (userWins === computerWins) {
+      return "You tied"
+    }
+    if (userWins > computerWins) {
+      return "You won"
+    }
      return "You lost"    
   }
 
@@ -81,13 +135,13 @@ const GameOnePlayer = ({rounds}) => {
     return () => {
       document.removeEventListener('keypress', handleKeyPress);
     };
-  }, [disabled]);
+  }, [disabled, result]);
   
   return (
     <div className='game-container container'>
     <div className='container'>
       <h1 className='rounds-container'>
-        <span className='title-text'>Round {rounds}</span>
+        <span className='title-text'>Available rounds: {cantRounds}</span>
       </h1>
     </div>
     <div className='scoreboard'>
@@ -98,8 +152,7 @@ const GameOnePlayer = ({rounds}) => {
         <Col>
         <span> computer win {computerWins} {computerWins < 2 ? "game" : "games"}</span>
         </Col>
-      </Row>
-      
+    </Row>      
     </div>
     <div>
       <Row className='choice'>

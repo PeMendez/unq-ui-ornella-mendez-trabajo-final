@@ -13,7 +13,7 @@ const GameOnePlayer = () => {
   const [userWins, setUserWins] = useState(0);
   const [computerWins, setComputerWins] = useState(0);
   const {rounds} = useParams();
-  const [cantRounds, setCantRounds] = useState(0);
+  const [current, setCurrent] = useState(1);
 
   const navigate = useNavigate();
 
@@ -24,40 +24,38 @@ const GameOnePlayer = () => {
       navigate(`${process.env.PUBLIC_URL}/`)
   };
 
-  const handleUserChoice = (idOption) => {// este anda perfecto sin rondas. 
-    setDisabled(true)
-    setUserChoice(idOption)
-    const randomChoice = Math.floor(Math.random() * 5) +1;
+  // const handleUserChoiceR = (idOption) => {// este anda perfecto sin rondas. 
+  //   setDisabled(true)
+  //   setUserChoice(idOption)
+  //   const randomChoice = Math.floor(Math.random() * 5) +1;
 
-    setTimeout(() => {
-      setComputerChoice(randomChoice);
-    }, 1500);
+  //   setTimeout(() => {
+  //     setComputerChoice(randomChoice);
+  //   }, 1500);
 
-    setTimeout(() => {
-      setResult(getResult(idOption, randomChoice));
-    }, 3000);
+  //   setTimeout(() => {
+  //     setResult(getResult(idOption, randomChoice));
+  //   }, 3000);
 
-    clearTimeout();
-  }
+  //   clearTimeout();
+  // }
 
-  console.log(disabled, rounds, cantRounds, rounds == cantRounds, result)
-
-  const getResult = (user, computer) => {
-    if (user == computer) {
-      return "You tied"
-    }
-    if (GameOptions[user-1].wins.includes(computer)){
-      setUserWins(userWins+1)
-      return "You won"
-    }
-     setComputerWins(computerWins+1)
-     return "You lost"    
-  }
+  // const getResult = (user, computer) => {
+  //   if (user == computer) {
+  //     return "You tied"
+  //   }
+  //   if (GameOptions[user-1].wins.includes(computer)){
+  //     setUserWins(userWins+1)
+  //     return "You won"
+  //   }
+  //    setComputerWins(computerWins+1)
+  //    return "You lost"    
+  // }
 
   //CODIGO PARA USAR RONDAS no termina de andar bien. 
-  const handleUserChoiceR = (idOption) => {
+  const handleUserChoice = (idOption) => {
     setDisabled(true)
-    setCantRounds(cantRounds+1)
+    setCurrent(current+1)
     setUserChoice(idOption)
     const randomChoice = Math.floor(Math.random() * 5) +1;
 
@@ -79,8 +77,8 @@ const GameOnePlayer = () => {
   }
 
   const checkResult = () => {
-    if (cantRounds == rounds) {
-      setResult(getResultCount())
+    if (rounds == current) {
+      setResult("getResultCount()")
     } else {
       setDisabled(false)
     }
@@ -96,13 +94,13 @@ const GameOnePlayer = () => {
   }  
 
   const getResultCount = () => {
-    if (userWins === computerWins) {
-      return "You tied"
+    if (computerWins > userWins) {
+      return "You lost"       
     }
     if (userWins > computerWins) {
       return "You won"
     }
-     return "You lost"    
+    return "You tied"   
   }
 
   const handleKeyPress = (event) => {
@@ -136,12 +134,16 @@ const GameOnePlayer = () => {
       document.removeEventListener('keypress', handleKeyPress);
     };
   }, [disabled, result]);
+
+  useEffect(() => {
+    getResultCount()
+  }, [current])
   
   return (
     <div className='game-container container'>
     <div className='container'>
       <h1 className='rounds-container'>
-        <span className='title-text'>Available rounds: {cantRounds}</span>
+        <span className='title-text'>Available rounds: {rounds - (current -1)}</span>
       </h1>
     </div>
     <div className='scoreboard'>
@@ -183,7 +185,7 @@ const GameOnePlayer = () => {
       )
       )}   
       </div>
-      {result !== "" && <Result result={result} onClose={handlePopupClose}/>}
+      {result !== "" && <Result result={getResultCount()} onClose={handlePopupClose}/>}
   </div>
   );
 }

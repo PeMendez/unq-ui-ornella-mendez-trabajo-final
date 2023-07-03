@@ -1,0 +1,35 @@
+.popup {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: #222129;
+    border: solid #110f1e;
+    border-radius: 8px;
+    padding: 20px;
+    color: white;
+    width: 400px;
+    max-width: 90%;
+  }
+  
+  .popup-content {
+    width: 100%;
+    color: rgb(228, 221, 221);
+  }
+  
+  .popup-header {
+    display: flex;
+    justify-content: flex-end; 
+  }
+  
+  .popup-header .on-close {
+    cursor: pointer;
+    color: white;
+  }
+  
+  .popup-header .on-close:hover {
+    color: gray; 
+  }
+  
+  

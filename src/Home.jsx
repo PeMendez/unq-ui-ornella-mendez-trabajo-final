@@ -28,14 +28,12 @@ const Home = () => {
     }
 
     const handleStartGameTwo = () => {
-        navigate(`${process.env.PUBLIC_URL}/gameTwo`)
+        navigate(`${process.env.PUBLIC_URL}/gameTwo/${value}`)
     }
 
     const saveSelect = (event) => {
         setValue(event.target.value)
     }
-
-  
 
     return (
         <div className='home-container container'>

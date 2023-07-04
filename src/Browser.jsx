@@ -16,7 +16,7 @@ const Browser = ()=>
      </Route> */}
         <Route path={`${process.env.PUBLIC_URL}/`} element={<Home/>}/>
         <Route path={`${process.env.PUBLIC_URL}/gameOne/:rounds`} element={<GameOnePlayer/>}/>
-        <Route path={`${process.env.PUBLIC_URL}/gameTwo`} element={<Game />}/>
+        <Route path={`${process.env.PUBLIC_URL}/gameTwo/:rounds`} element={<Game />}/>
         <Route path={`${process.env.PUBLIC_URL}/*`} element={<NotFoundPage />} />
    </Routes>
  </BrowserRouter>

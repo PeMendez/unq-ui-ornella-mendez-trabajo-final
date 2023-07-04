@@ -5,6 +5,7 @@ import Result from './Result';
 import GameOptionsP2 from './GameOptionsP2'
 import './GameP2.css';
 import { useNavigate, useParams } from "react-router-dom";
+import { LiaCheckSolid } from "react-icons/lia"
 
 
 
@@ -58,7 +59,7 @@ const Game = () => {
   const checkResult = () => {
     setTimeout(() => {
       if (rounds == current) {
-        setResult("getResultCount()")
+        setResult("end")
       } else {
         setPlayerOneChoice(null)
         setPlayerTwoChoice(null)
@@ -169,12 +170,14 @@ const Game = () => {
       <Row className='choice'>
         <Col className='choiceP1'>
           <button className="button">
-           {playerOneChoice ? GameOptions[playerOneChoice-1]?.icon : null } 
+           {playerOneChoice != null && playerTwoChoice == null ? <LiaCheckSolid/> : GameOptions[playerOneChoice-1]?.icon }
+           {/* GameOptions[playerOneChoice-1]?.icon : null }  */}
           </button>
         </Col>
         <Col className='choiceP2'>
         <button className="button-p2">
-           {playerTwoChoice ? GameOptions[playerTwoChoice-1]?.icon : null } 
+          {playerTwoChoice != null && playerOneChoice == null ? <LiaCheckSolid/> : GameOptions[playerTwoChoice-1]?.icon }
+           {/* {playerTwoChoice ? GameOptions[playerTwoChoice-1]?.icon : null }  */}
           </button>
         </Col>
       </Row>

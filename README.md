@@ -1,6 +1,6 @@
 # TFI- Piedra, Papel, Tijera, Lagarto o Spock
 
-# Instrucciones para descargar e instalar el proyecto
+## Instrucciones para descargar e instalar el proyecto
 
 Para poder instalar el proyecto tiene que tener instalados previamente node y npm
 

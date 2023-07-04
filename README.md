@@ -6,11 +6,11 @@ Para poder instalar el proyecto tiene que tener instalados previamente node y np
 
 Descargar el proyecto:
 
-- Descargar el zip desde la url o directamente desde la terminal de git clonando el repositorio.
+Descargar el zip desde la url o directamente desde la terminal de git clonando el repositorio.
 
-Si eligió descargar el zip, descomprima el archivo, abra la consola y ubiquise dentro del directorio del mismo.  
+- Si eligió descargar el zip, descomprima el archivo, abra la consola y ubiquise dentro del directorio del mismo.  
 
-Si eligió clonar el repositorio, colocarse en la carpeta donde quiera clonarlo y escribir el siguiente comando:
+- Si eligió clonar el repositorio, colocarse en la carpeta donde quiera clonarlo y escribir el siguiente comando:
 
 git clone git@github.com:PeMendez/unq-ui-ornella-mendez-trabajo-final.git
 

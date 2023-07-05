@@ -26,7 +26,7 @@ const Game = () => {
     setResult("");
     setPlayerOneChoice(null);
     setPlayerTwoChoice(null); 
-    navigate(`${process.env.PUBLIC_URL}/`)
+    navigate(`/`)
   };
 
   const handlePlayer1Choice = (idOption) => {
@@ -171,13 +171,11 @@ const Game = () => {
         <Col className='choiceP1'>
           <button className="button">
            {playerOneChoice != null && playerTwoChoice == null ? <LiaCheckSolid/> : GameOptions[playerOneChoice-1]?.icon }
-           {/* GameOptions[playerOneChoice-1]?.icon : null }  */}
           </button>
         </Col>
         <Col className='choiceP2'>
         <button className="button-p2">
           {playerTwoChoice != null && playerOneChoice == null ? <LiaCheckSolid/> : GameOptions[playerTwoChoice-1]?.icon }
-           {/* {playerTwoChoice ? GameOptions[playerTwoChoice-1]?.icon : null }  */}
           </button>
         </Col>
       </Row>

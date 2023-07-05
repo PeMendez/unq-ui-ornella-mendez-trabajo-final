@@ -21,38 +21,9 @@ const GameOnePlayer = () => {
       setResult("");
       setComputerChoice(null);
       setUserChoice(null); 
-      navigate(`${process.env.PUBLIC_URL}/`)
+      navigate(`/`)
   };
 
-  // const handleUserChoiceR = (idOption) => {// este anda perfecto sin rondas. 
-  //   setDisabled(true)
-  //   setUserChoice(idOption)
-  //   const randomChoice = Math.floor(Math.random() * 5) +1;
-
-  //   setTimeout(() => {
-  //     setComputerChoice(randomChoice);
-  //   }, 1500);
-
-  //   setTimeout(() => {
-  //     setResult(getResult(idOption, randomChoice));
-  //   }, 3000);
-
-  //   clearTimeout();
-  // }
-
-  // const getResult = (user, computer) => {
-  //   if (user == computer) {
-  //     return "You tied"
-  //   }
-  //   if (GameOptions[user-1].wins.includes(computer)){
-  //     setUserWins(userWins+1)
-  //     return "You won"
-  //   }
-  //    setComputerWins(computerWins+1)
-  //    return "You lost"    
-  // }
-
-  //CODIGO PARA USAR RONDAS no termina de andar bien. 
   const handleUserChoice = (idOption) => {
     setDisabled(true)
     setCurrent(current+1)

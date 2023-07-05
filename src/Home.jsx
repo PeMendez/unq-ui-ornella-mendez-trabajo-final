@@ -24,11 +24,11 @@ const Home = () => {
     }
 
     const handleStartGameOne = () => {
-        navigate(`${process.env.PUBLIC_URL}/gameOne/${value}`)
+        navigate(`/gameOne/${value}`)
     }
 
     const handleStartGameTwo = () => {
-        navigate(`${process.env.PUBLIC_URL}/gameTwo/${value}`)
+        navigate(`/gameTwo/${value}`)
     }
 
     const saveSelect = (event) => {

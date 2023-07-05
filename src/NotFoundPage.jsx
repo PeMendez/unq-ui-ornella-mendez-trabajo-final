@@ -8,7 +8,7 @@ const NotFoundPage = () => {
     const navigate = useNavigate();
 
     const handleRedirectHome = () => {
-        navigate(`${process.env.PUBLIC_URL}/`)
+        navigate(`/`)
     }
 
     return (

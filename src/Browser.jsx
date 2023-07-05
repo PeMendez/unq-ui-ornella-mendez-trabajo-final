@@ -8,16 +8,12 @@ import NotFoundPage from './NotFoundPage'
 const Browser = ()=> 
 <BrowserRouter> 
    <Routes basename={'/unq-ui-ornella-mendez-trabajo-final'}>
-     {/* <Route path="/">
+     <Route path="/">
        <Route index element={<Home/>} />
-       <Route path="/gameOne" element={<GameOnePlayer/>} />
-       <Route path="/gameTwo" element={<Game/>} />
+       <Route path="/gameOne/:rounds" element={<GameOnePlayer/>} />
+       <Route path="/gameTwo/:rounds" element={<Game/>} />
        <Route path="*" element={<NotFoundPage/>} />
-     </Route> */}
-        <Route path={`${process.env.PUBLIC_URL}/`} element={<Home/>}/>
-        <Route path={`${process.env.PUBLIC_URL}/gameOne/:rounds`} element={<GameOnePlayer/>}/>
-        <Route path={`${process.env.PUBLIC_URL}/gameTwo/:rounds`} element={<Game />}/>
-        <Route path={`${process.env.PUBLIC_URL}/*`} element={<NotFoundPage />} />
+     </Route>
    </Routes>
  </BrowserRouter>
 

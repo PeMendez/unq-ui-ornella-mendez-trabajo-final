@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/unq-ui-ornella-mendez-trabajo-final/static/css/main.8bc3e264.css",
+    "main.js": "/unq-ui-ornella-mendez-trabajo-final/static/js/main.c7d12f20.js",
+    "static/media/itsATrap.gif": "/unq-ui-ornella-mendez-trabajo-final/static/media/itsATrap.235ff6cdcd512852ef06.gif",
+    "static/media/spock.png": "/unq-ui-ornella-mendez-trabajo-final/static/media/spock.b12dfd256ebfa628c3fe.png",
+    "index.html": "/unq-ui-ornella-mendez-trabajo-final/index.html",
+    "main.8bc3e264.css.map": "/unq-ui-ornella-mendez-trabajo-final/static/css/main.8bc3e264.css.map",
+    "main.c7d12f20.js.map": "/unq-ui-ornella-mendez-trabajo-final/static/js/main.c7d12f20.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8bc3e264.css",
+    "static/js/main.c7d12f20.js"
+  ]
+}

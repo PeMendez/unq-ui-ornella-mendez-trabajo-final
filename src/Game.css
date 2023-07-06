@@ -38,7 +38,7 @@
   border-bottom: solid #110f1e !important;
 }
 
-.icons {
+.icons-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +46,10 @@
   margin-bottom: 5%;
 }
 
-
+.icons-buttons svg {
+  font-size: 20px;
+  margin: 20px;
+}
 
 .button-option {
   border-radius: 50%;

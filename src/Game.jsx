@@ -185,14 +185,14 @@ const Game = () => {
       <Row>
         <Col className='iconsOption xs'>
         {GameOptions.map((option) => (
-            <button className="option small-button"
+            <button className="option small"
                     key={option.id} 
                     onClick={()=> handlePlayer1Choice(option.id)}
                     disabled={disabledp1}
                     style={{ marginRight: '7px' }}>
               <div className='icon-wrapper-p2'>
                 {option.icon}
-                <span className="label">{option.letter}</span>
+                <span className="label-letter">{option.letter}</span>
               </div>
             </button>
             )
@@ -200,14 +200,14 @@ const Game = () => {
         </Col>
         <Col className='iconsOption'>
           {GameOptionsP2.map((option) => (
-            <button className="option2 small-button"
+            <button className="option2 small"
                     key={option.id} 
                     onClick={()=> handlePlayer2Choice(option.id)}
                     disabled={disabledp2}
                     style={{ marginRight: '7px' }}>
               <div className='icon-wrapper-p2'>
                 {option.icon}
-                <span className="label">{option.letter}</span>
+                <span className="label-letter">{option.letter}</span>
               </div>
             </button>
             )

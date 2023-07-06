@@ -78,7 +78,7 @@
 
 .button-info {
   display: flex !important;
-  justify-content: end !important;
+  justify-content: flex-end !important;
   position: absolute;
   right: 10px;
   bottom: 70%;
@@ -142,7 +142,7 @@
 }
 
 .icons svg {
-  font-size: 40px;
+  font-size: 60px;
   margin: 20px;
 }
 

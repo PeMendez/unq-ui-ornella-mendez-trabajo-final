@@ -6,15 +6,14 @@ import GameOnePlayer from './GameOnePlayer'
 import NotFoundPage from './NotFoundPage'
 
 const Browser = ()=> 
-<BrowserRouter> 
-   <Routes>
-     <Route path="/">
-       <Route index element={<Home/>} />
-       <Route path="/gameOne/:rounds" element={<GameOnePlayer/>} />
-       <Route path="/gameTwo/:rounds" element={<Game/>} />
-       <Route path="*" element={<NotFoundPage/>} />
-     </Route>
-   </Routes>
- </BrowserRouter>
+<BrowserRouter basename="/unq-ui-ornella-mendez-trabajo-final">
+  <Routes>
+    <Route path="/" element={<Home />} index />
+    <Route path="/gameOne/:rounds" element={<GameOnePlayer />} />
+    <Route path="/gameTwo/:rounds" element={<Game />} />
+    <Route path="*" element={<NotFoundPage />} />
+  </Routes>
+</BrowserRouter>
+
 
 export default Browser ;

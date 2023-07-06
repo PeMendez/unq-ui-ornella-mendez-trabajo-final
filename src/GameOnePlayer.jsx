@@ -142,7 +142,7 @@ const GameOnePlayer = () => {
       </Row>
 
     </div>
-    <div className='icons'>
+    <div className='icons-buttons'>
       {GameOptions.map((option) => (
         <button className="button-option"
                 key={option.id} 

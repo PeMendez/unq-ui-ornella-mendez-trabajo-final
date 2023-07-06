@@ -11,7 +11,7 @@ export default function PopUpRules ({onClose, isRules}) {
         </div>
       <div className="popup-content">
         {isRules ? (
-            <p style={{ fontSize: '20px' }}>
+            <p style={{ fontSize: '15px' }}>
             Scissors cuts paper,
             <br />
             paper covers rock,
@@ -35,7 +35,7 @@ export default function PopUpRules ({onClose, isRules}) {
             rock crushes scissors.
             </p>
         ) : (
-            <p style={{ fontSize: '20px' }}>
+            <p style={{ fontSize: '15px' }}>
                 For one player<br />
                 press A --{'>'} rock<br />
                 press S --{'>'} paper<br />

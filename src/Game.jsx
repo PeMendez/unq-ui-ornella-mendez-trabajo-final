@@ -181,7 +181,7 @@ const Game = () => {
       </Row>
 
     </div>
-    <div className='icons'>
+    <div className='iconsGame'>
       <Row>
         <Col className='iconsOption xs'>
         {GameOptions.map((option) => (

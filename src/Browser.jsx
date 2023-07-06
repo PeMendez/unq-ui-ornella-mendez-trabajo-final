@@ -7,7 +7,7 @@ import NotFoundPage from './NotFoundPage'
 
 const Browser = ()=> 
 <BrowserRouter> 
-   <Routes basename={'/unq-ui-ornella-mendez-trabajo-final'}>
+   <Routes>
      <Route path="/">
        <Route index element={<Home/>} />
        <Route path="/gameOne/:rounds" element={<GameOnePlayer/>} />

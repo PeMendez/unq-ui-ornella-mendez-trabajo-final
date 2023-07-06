@@ -27,14 +27,18 @@
   text-align: center !important;
 }
 
+.title-text {
+  font-size: xx-large;
+}
+
 .image-container {
   display: flex;
   justify-content: flex-end;
 }
 
 .img-fluid {
-  max-height: 100px;
-  max-width: 100px;
+  max-height: 80px;
+  max-width: 80px;
 }
 
 .home-div {
@@ -59,7 +63,7 @@
   border-radius: 5px;
   padding: 4px;
   color: hsl(263, 100%, 71%);
-  font-size: larger;
+  font-size: medium;
 }
 
 .value-rounds{
@@ -68,7 +72,7 @@
   border-radius: 5px;
   padding: 5px;
   color: hsl(263, 100%, 71%);
-  font-size: larger;
+  font-size: medium;
 }
 
 
@@ -80,8 +84,12 @@
   bottom: 70%;
 }
 
+.button-info button {
+  margin-right: 5px;
+}
+
 .info {
-  font-size: larger;
+  font-size: small;
 }
 
 .button-game {
@@ -99,7 +107,7 @@
 .outline-custom {
   color: hsl(263, 100%, 71%);
   border-color: hsl(263, 100%, 71%);
-  font-size: larger;
+  font-size: medium !important;
   background-color: transparent;
 }
 
@@ -134,7 +142,7 @@
 }
 
 .icons svg {
-  font-size: 60px;
+  font-size: 40px;
   margin: 20px;
 }
 

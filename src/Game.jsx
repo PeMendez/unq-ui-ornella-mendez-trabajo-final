@@ -54,6 +54,9 @@ const Game = () => {
         checkResult()
       }
   }, 1000);
+
+  clearTimeout();
+
   }
 
   const checkResult = () => {
@@ -67,6 +70,8 @@ const Game = () => {
         setDisabledP2(false)
       }
     }, 1000);
+
+    clearTimeout();
   }
   
   useEffect(() => {

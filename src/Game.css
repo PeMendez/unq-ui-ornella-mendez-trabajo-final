@@ -167,3 +167,9 @@
 .small-button {
   flex: 0 1 50px;
 }
+
+@media (max-width: 768px) {
+  .small-button {
+    flex: 0 1 10%; 
+  }
+}

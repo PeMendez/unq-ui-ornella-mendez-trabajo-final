@@ -2,7 +2,7 @@ import React from "react";
 import CloseIcon from '@mui/icons-material/Close';
 import './PopUpRules.css'
 
-export default function PopUpRules ({onClose, isRules}) {
+const PopUpRules = ({onClose, isRules}) => {
 
     return (
       <div className="popup">
@@ -57,3 +57,5 @@ export default function PopUpRules ({onClose, isRules}) {
   );
 
 }
+
+export default PopUpRules ;

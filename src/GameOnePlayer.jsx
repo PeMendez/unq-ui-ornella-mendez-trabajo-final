@@ -49,7 +49,7 @@ const GameOnePlayer = () => {
 
   const checkResult = () => {
     if (rounds == current) {
-      setResult("getResultCount()")
+      setResult("end")
     } else {
       setDisabled(false)
     }

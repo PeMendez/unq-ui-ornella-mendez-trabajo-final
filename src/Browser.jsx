@@ -1,6 +1,6 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import React from 'react';
-import Game from './Game';
+import Game from './GameTwoPlayer';
 import Home from './Home';
 import GameOnePlayer from './GameOnePlayer'
 import NotFoundPage from './NotFoundPage'

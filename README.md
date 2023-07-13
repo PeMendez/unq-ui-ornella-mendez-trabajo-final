@@ -1,5 +1,10 @@
 # TFI- Piedra, Papel, Tijera, Lagarto o Spock
 
+## Para jugarlo sin instalación 
+
+https://pemendez.github.io/unq-ui-ornella-mendez-trabajo-final/
+
+
 ## Instrucciones para descargar e instalar el proyecto
 
 Para poder instalar el proyecto tiene que tener instalados previamente node y npm
